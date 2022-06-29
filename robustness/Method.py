@@ -12,7 +12,7 @@ def center_index_node(label, clusters_num):
     for i in range(np.size(label)):
         center_dic[label[i]].append(i)
     center_dic = np.array(list(itertools.zip_longest(*center_dic, fillvalue=-1))).T # padding using -1
-    return center_dic  # k by m matrix, m is maximal number in one cluster
+    return center_dic  # k by m matrix, m is maximal value for number in one cluster
 
 
 
