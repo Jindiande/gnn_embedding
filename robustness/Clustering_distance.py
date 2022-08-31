@@ -23,6 +23,7 @@ class Cluster_distance():# using linear assignment for implementing equation (2.
         return cost
     def distance(self):
         cost=self.cost()
+        #print(cost)
         return cost[linear_sum_assignment(cost)].sum()
 class Cluster():
     def __init__(self, embedding, clusters_num):
@@ -32,7 +33,7 @@ class Cluster():
     def clustering(self):#using k-means algorithm
         kmeans=KMeans(self.clusters_num).fit(self.embedding)
         label = np.array(kmeans.labels_)
-        return label# 1 by n array, n is number of node.
+        return label.T# n by 1 array, n is number of node.
 
 
 
